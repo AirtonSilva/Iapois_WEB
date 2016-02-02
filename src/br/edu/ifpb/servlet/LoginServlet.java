@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONObject;
+import br.edu.ifpb.entidade.*;
 
 /**
  * Servlet implementation class loginServlet
@@ -60,10 +60,10 @@ public class LoginServlet extends HttpServlet {
 		}
 			
 		// Conversão para JSONObject
-		JSONObject json = new JSONObject(stringBuffer.toString(), line);
+		Pessoa pessoa = new Pessoa(stringBuffer.toString(), line);
 		
-		String nome = json.getString("nome");
-		String senha = json.getString("senha");		
+		String nome = pessoa.getNome("nome");
+		String senha = pessoa.getSenha("senha");		
 
 		// Tipo e codificação do conteúdo de resposta.
 		response.setContentType("application/json");
