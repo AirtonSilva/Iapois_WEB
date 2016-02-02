@@ -7,7 +7,7 @@
 <body>
 Por favor, preencha seus dados abaixo.
 
-<form action='CadastraUsuario' method="post">
+<form action='..\src\br\edu\ipfb\servlet\CadastraUsuario' method="post">
 <fieldset>
  <legend>Dados de login</legend>
  <table cellspacing="10">
@@ -16,7 +16,7 @@ Por favor, preencha seus dados abaixo.
     <label for="email">E-mail: </label>
    </td>
    <td align="left">
-    <input type="text" name="email">
+    <input type="text" required="" type="text" name="email">
    </td>
   </tr>
   <tr>
@@ -24,23 +24,18 @@ Por favor, preencha seus dados abaixo.
     <label for="login">Login de usuário: </label>
    </td>
    <td align="left">
-    <input type="text" name="login">
+    <input type="text" required="" name="login">
    </td>
   </tr>
   <tr>
    <td>
-    <label for="pass">Senha: </label>
+    <label for="passconfirm">Informe a senha: </label>
    </td>
    <td align="left">
-    <input type="password" name="pass">
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <label for="passconfirm">Confirme a senha: </label>
-   </td>
-   <td align="left">
-    <input type="password" name="passconfirm">
+    <input type="password" required pattern="[a-z]{6}" placeholder="6 letras "name="passconfirm"
+    onchange="form.pwd2.pattern = this.value;">
+    <br/>
+    Confirme a senha: <input type="password" required pattern="[a-z]{6}" placeholder="6 letras" name="passconfirm2">
    </td>
   </tr>
  </table>
