@@ -62,8 +62,6 @@ public class LoginServlet extends HttpServlet {
 		// Conversão para JSONObject
 		Pessoa pessoa = new Pessoa(stringBuffer.toString(), line);
 		
-		String nome = pessoa.getNome("nome");
-		String senha = pessoa.getSenha("senha");		
 
 		// Tipo e codificação do conteúdo de resposta.
 		response.setContentType("application/json");
@@ -72,9 +70,7 @@ public class LoginServlet extends HttpServlet {
 		// Conteúdo de resposta.
 		PrintWriter pw = response.getWriter();
 		
-		if (nome.toLowerCase().trim().equals("fulano") 
-				&& senha.trim().equals("123")) {			
-			// Caso verdadeiro.
+		
 			try {
 				
 				pw.write("{'key': '" + criptografarSha256("IFPB") + "'}");
